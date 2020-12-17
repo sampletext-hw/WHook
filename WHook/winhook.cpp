@@ -20,9 +20,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	RegisterClass(&WindowClass);
 
-	HWND hMainWindow;
+	
 
-	hMainWindow = CreateWindow(L"WindowClass", L"Hooks", WS_OVERLAPPEDWINDOW | WS_VISIBLE,
+	HWND hMainWindow = CreateWindow(L"WindowClass", L"Hooks", WS_OVERLAPPEDWINDOW | WS_VISIBLE,
 	                           CW_USEDEFAULT, CW_USEDEFAULT, 560, 450,
 	                           NULL, NULL, hInstance, NULL);
 
@@ -68,7 +68,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			break;
 		case IDB_SETKHOOK:
 			SetKeyBoardHook();
-			EnableWindow(hButSetMHook, FALSE);
+			EnableWindow(hButSetKHook, FALSE);
 			break;
 		case IDB_UNKHOOK:
 			UnKeyBoardHook();
